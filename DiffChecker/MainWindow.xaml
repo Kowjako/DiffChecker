@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiffChecker"
+        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
         mc:Ignorable="d"
         Title="MainWindow" ResizeMode="NoResize" WindowStyle="None" Height="700" Width="1200">
     <Window.Resources>
@@ -26,10 +27,11 @@
                 <ColumnDefinition Width="15*"/>
             </Grid.ColumnDefinitions>
             <DockPanel Grid.ColumnSpan="3" Grid.Row="0">
-                <Border DockPanel.Dock="Bottom" BorderBrush="Black" BorderThickness="0.5"/>
+                <Border DockPanel.Dock="Bottom" BorderBrush="Black" BorderThickness="0.4"/>
                 <StackPanel MouseLeftButtonDown="headerPanel_MouseLeftButtonDown" Orientation="Horizontal" x:Name="headerPanel" Background="Transparent" VerticalAlignment="Center">
                     <TextBlock VerticalAlignment="Center" Style="{StaticResource defaultTextBlockStyle}" Margin="10,0,0,0" FontSize="17" Text="DiffChecker by maybedot"/>
-                    <Image MouseLeftButtonDown="closeBtn_PreviewMouseUp" Cursor="Hand" Margin="955,0,0,0" Height="30" x:Name="closeBtn" Source="Icons/closeApp.png"/> <!-- Upperbound event -->                    
+                    <Image ToolTip="Check difference" MouseLeftButtonDown="startBtn_MouseLeftButtonDown" Cursor="Hand" Margin="915,0,0,0" Height="30" x:Name="startBtn" Source="Icons/go.png"/>
+                    <Image ToolTip="Close app" MouseLeftButtonDown="closeBtn_PreviewMouseUp" Cursor="Hand" Margin="10,0,0,0" Height="30" x:Name="closeBtn" Source="Icons/closeApp.png"/> <!-- Upperbound event -->
                 </StackPanel>
             </DockPanel>
             <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Background="Gray"/>
@@ -40,11 +42,30 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="PREVIOUS DIFFERENCE" Background="DarkRed" BorderBrush="Red"/>
-                <Button Grid.Column="1" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="MERGE ➞" Background="DarkRed" BorderBrush="Red"/>
-                <Button Grid.Column="2" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="🠨 MERGE" Background="Navy" BorderBrush="Blue"/>
-                <Button Grid.Column="3" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="NEXT DIFFERENCE" Background="Navy" BorderBrush="Blue"/>
+                <Button x:Name="btnPrevDiff" Grid.Column="0" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="PREVIOUS DIFFERENCE" Background="DarkRed" BorderBrush="Red"/>
+                <Button x:Name="btnOriginalMerge" Grid.Column="1" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="MERGE ➞" Background="DarkRed" BorderBrush="Red"/>
+                <Button x:Name="btnChangedMerge" Grid.Column="2" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="🠨 MERGE" Background="Navy" BorderBrush="Blue"/>
+                <Button x:Name="btnNextDiff" Grid.Column="3" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="NEXT DIFFERENCE" Background="Navy" BorderBrush="Blue"/>
             </Grid>
+            <DockPanel LastChildFill="True" VerticalAlignment="Top" Height="40" Grid.Column="0" Grid.Row="1">
+                <Button DockPanel.Dock="Top" x:Name="btnLoadOriginal" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="5" Content="Load Original Text"/>
+                <Grid DockPanel.Dock="Top" Height="580">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="15*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox TextWrapping="WrapWithOverflow"/>
+                </Grid>
+            </DockPanel>
+            <DockPanel LastChildFill="True" VerticalAlignment="Top" Height="40" Grid.Column="2" Grid.Row="1">
+                <Button DockPanel.Dock="Top" x:Name="btnLoadChanged" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="5" Content="Load Changed Text"/>
+                <Grid DockPanel.Dock="Top" Height="580">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="15*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </DockPanel>
         </Grid>
         
     </Border>

@@ -32,8 +32,13 @@ namespace DiffChecker
 
         private async void closeBtn_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
-            await Task.Delay(500);
+            await Task.Delay(300);
             this.Close();
+        }
+
+        private void startBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
