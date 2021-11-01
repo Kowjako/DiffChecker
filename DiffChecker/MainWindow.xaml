@@ -5,31 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiffChecker"
         mc:Ignorable="d"
-        Title="MainWindow" ResizeMode="NoResize" WindowStyle="None" Height="700" Width="1200">
-    <Window.Resources>
-        <SolidColorBrush x:Key="borderBrush" Color="RoyalBlue"/>
-        <Style TargetType="TextBlock" x:Key="defaultTextBlockStyle">
-            <Setter Property="FontFamily" Value="Bauhaus 93"/>
-        </Style>
-    </Window.Resources>
-    <Border BorderBrush="Black" BorderThickness="1">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="18*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <DockPanel Grid.ColumnSpan="2" Grid.Row="0">
-                <Border DockPanel.Dock="Bottom" BorderBrush="Black" BorderThickness="0.5"/>
-                <StackPanel MouseLeftButtonDown="headerPanel_MouseLeftButtonDown" Orientation="Horizontal" x:Name="headerPanel" Background="Transparent" VerticalAlignment="Center">
-                    <TextBlock VerticalAlignment="Center" Style="{StaticResource defaultTextBlockStyle}" Margin="10,0,0,0" FontSize="17" Text="DiffChecker by maybedot"/>
-                    <Image MouseLeftButtonDown="closeBtn_PreviewMouseUp" Cursor="Hand" Margin="955,0,0,0" Height="30" x:Name="closeBtn" Source="Icons/closeApp.png"/> <!-- Upperbound event -->                    
-                </StackPanel>
-            </DockPanel>
-            
-        </Grid>
-    </Border>
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+    </Grid>
 </Window>

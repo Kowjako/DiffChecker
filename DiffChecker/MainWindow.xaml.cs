@@ -24,16 +24,5 @@ namespace DiffChecker
         {
             InitializeComponent();
         }
-
-        private void headerPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-        }
-
-        private async void closeBtn_PreviewMouseUp(object sender, MouseButtonEventArgs e)
-        {
-            await Task.Delay(500);
-            this.Close();
-        }
     }
 }
