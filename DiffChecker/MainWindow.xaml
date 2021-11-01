@@ -47,23 +47,24 @@
                 <Button x:Name="btnChangedMerge" Grid.Column="2" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="🠨 MERGE" Background="Navy" BorderBrush="Blue"/>
                 <Button x:Name="btnNextDiff" Grid.Column="3" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="NEXT DIFFERENCE" Background="Navy" BorderBrush="Blue"/>
             </Grid>
-            <DockPanel LastChildFill="True" VerticalAlignment="Top" Height="40" Grid.Column="0" Grid.Row="1">
+            <DockPanel LastChildFill="True" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1">
                 <Button DockPanel.Dock="Top" x:Name="btnLoadOriginal" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="5" Content="Load Original Text"/>
                 <Grid DockPanel.Dock="Top" Height="580">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="20*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox TextWrapping="WrapWithOverflow"/>
+                    <TextBlock x:Name="originalNumerator" Margin="0,5,0,0" TextAlignment="Center" Style="{x:Null}" FontSize="15" FontFamily="Lucida Console" Text="1" TextWrapping="WrapWithOverflow"/>
                 </Grid>
             </DockPanel>
-            <DockPanel LastChildFill="True" VerticalAlignment="Top" Height="40" Grid.Column="2" Grid.Row="1">
+            <DockPanel LastChildFill="True" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1">
                 <Button DockPanel.Dock="Top" x:Name="btnLoadChanged" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="5" Content="Load Changed Text"/>
                 <Grid DockPanel.Dock="Top" Height="580">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="15*"/>
                     </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="changedNumerator" Margin="0,5,0,0" TextAlignment="Center" Style="{x:Null}" FontSize="15" FontFamily="Lucida Console" Text="1" TextWrapping="WrapWithOverflow"/>
                 </Grid>
             </DockPanel>
         </Grid>
