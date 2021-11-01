@@ -21,27 +21,29 @@
                 <RowDefinition Height="1.25*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="0.05*"/>
+                <ColumnDefinition Width="15*"/>
             </Grid.ColumnDefinitions>
-            <DockPanel Grid.ColumnSpan="2" Grid.Row="0">
+            <DockPanel Grid.ColumnSpan="3" Grid.Row="0">
                 <Border DockPanel.Dock="Bottom" BorderBrush="Black" BorderThickness="0.5"/>
                 <StackPanel MouseLeftButtonDown="headerPanel_MouseLeftButtonDown" Orientation="Horizontal" x:Name="headerPanel" Background="Transparent" VerticalAlignment="Center">
                     <TextBlock VerticalAlignment="Center" Style="{StaticResource defaultTextBlockStyle}" Margin="10,0,0,0" FontSize="17" Text="DiffChecker by maybedot"/>
                     <Image MouseLeftButtonDown="closeBtn_PreviewMouseUp" Cursor="Hand" Margin="955,0,0,0" Height="30" x:Name="closeBtn" Source="Icons/closeApp.png"/> <!-- Upperbound event -->                    
                 </StackPanel>
             </DockPanel>
-            <Grid Grid.ColumnSpan="2" Grid.Row="2">
+            <StackPanel Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Background="Gray"/>
+            <Grid Grid.ColumnSpan="3" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="NEXT DIFFERENCE" Background="DarkRed" BorderBrush="Red"/>
+                <Button Grid.Column="0" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="PREVIOUS DIFFERENCE" Background="DarkRed" BorderBrush="Red"/>
                 <Button Grid.Column="1" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="MERGE ➞" Background="DarkRed" BorderBrush="Red"/>
                 <Button Grid.Column="2" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="🠨 MERGE" Background="Navy" BorderBrush="Blue"/>
-                <Button Grid.Column="3" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="PREVIOUS DIFFERENCE" Background="Navy" BorderBrush="Blue"/>
+                <Button Grid.Column="3" Style="{StaticResource MaterialDesignRaisedDarkButton}" Margin="5" Content="NEXT DIFFERENCE" Background="Navy" BorderBrush="Blue"/>
             </Grid>
         </Grid>
         
