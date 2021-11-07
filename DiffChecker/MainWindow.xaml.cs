@@ -40,5 +40,41 @@ namespace DiffChecker
         {
             throw new NotImplementedException();
         }
+
+        private void originalText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var lines = originalText.LineCount;
+            originalNumerator.Text = string.Empty;
+            for (int i = 0; i < lines; i++)
+            {
+                if (i == lines - 1)
+                    originalNumerator.Text += (i + 1).ToString();
+                else
+                    originalNumerator.Text += (i + 1).ToString() + "  ";
+            }
+        }
+
+        private void originalText_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            sv1.ScrollToVerticalOffset(e.VerticalOffset);
+        }
+
+        private void changedText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var lines = changedText.LineCount;
+            changedNumerator.Text = string.Empty;
+            for (int i = 0; i < lines; i++)
+            {
+                if (i == lines - 1)
+                    changedNumerator.Text += (i + 1).ToString();
+                else
+                    changedNumerator.Text += (i + 1).ToString() + "  ";
+            }
+        }
+
+        private void changedText_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            sv2.ScrollToVerticalOffset(e.VerticalOffset);
+        }
     }
 }
