@@ -46,6 +46,9 @@ namespace DiffChecker
             "30"
         };
 
+        public int SelectedFontSize => int.Parse(FontSizes[sizeBox.SelectedIndex]);
+        public string SelectedFont => FontItems[fontBox.SelectedIndex];
+
         public SettingWindow()
         {
             InitializeComponent();
@@ -58,6 +61,16 @@ namespace DiffChecker
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
+
+        private void closeBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DialogResult = false;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
         }
     }
 }

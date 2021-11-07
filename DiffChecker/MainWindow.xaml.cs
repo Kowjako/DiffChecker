@@ -84,7 +84,10 @@ namespace DiffChecker
             var window = new SettingWindow();
             window.Owner = this;
             window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-            window.ShowDialog();
+            if (window.ShowDialog() == true)
+            {
+                /* SET FONT & SIZE */
+            }
         }
 
         private void minimizeBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
