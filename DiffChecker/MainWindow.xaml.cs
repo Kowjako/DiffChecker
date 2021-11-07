@@ -27,6 +27,8 @@ namespace DiffChecker
 
         private void headerPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            if (e.Source is Image img && img.Name == "menuBtn")
+                return;
             this.DragMove();
         }
 
@@ -38,7 +40,7 @@ namespace DiffChecker
 
         private void startBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private void originalText_TextChanged(object sender, TextChangedEventArgs e)
@@ -75,6 +77,19 @@ namespace DiffChecker
         private void changedText_ScrollChanged(object sender, ScrollChangedEventArgs e)
         {
             sv2.ScrollToVerticalOffset(e.VerticalOffset);
+        }
+
+        private void menuBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var window = new SettingWindow();
+            window.Owner = this;
+            window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            window.ShowDialog();
+        }
+
+        private void minimizeBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }

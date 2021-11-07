@@ -34,7 +34,9 @@
                 <Border DockPanel.Dock="Bottom" BorderBrush="Black" BorderThickness="0.4"/>
                 <StackPanel MouseLeftButtonDown="headerPanel_MouseLeftButtonDown" Orientation="Horizontal" x:Name="headerPanel" Background="Transparent" VerticalAlignment="Center">
                     <TextBlock VerticalAlignment="Center" Style="{StaticResource defaultTextBlockStyle}" Margin="10,0,0,0" FontSize="17" Text="DiffChecker by maybedot"/>
-                    <Image ToolTip="Check difference" MouseLeftButtonDown="startBtn_MouseLeftButtonDown" Cursor="Hand" Margin="915,0,0,0" Height="30" x:Name="startBtn" Source="Icons/go.png"/>
+                    <Image ToolTip="Minimize" MouseLeftButtonDown="minimizeBtn_MouseLeftButtonDown" Cursor="Hand" Margin="1235,0,0,0" Height="30" x:Name="minimizeBtn" Source="Icons/minimize.png"/>
+                    <Image ToolTip="Settings" MouseLeftButtonDown="menuBtn_MouseLeftButtonDown" Cursor="Hand" Margin="10,0,0,0" Height="30" x:Name="menuBtn" Source="Icons/menu.png"/>
+                    <Image ToolTip="Check difference" MouseLeftButtonDown="startBtn_MouseLeftButtonDown" Cursor="Hand" Margin="10,0,0,0" Height="30" x:Name="startBtn" Source="Icons/go.png"/>
                     <Image ToolTip="Close app" MouseLeftButtonDown="closeBtn_PreviewMouseUp" Cursor="Hand" Margin="10,0,0,0" Height="30" x:Name="closeBtn" Source="Icons/closeApp.png"/>
                     <!-- Upperbound event -->
                 </StackPanel>
