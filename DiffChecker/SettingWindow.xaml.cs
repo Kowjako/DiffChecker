@@ -72,5 +72,10 @@ namespace DiffChecker
         {
             this.DialogResult = true;
         }
+
+        private void headerPanel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

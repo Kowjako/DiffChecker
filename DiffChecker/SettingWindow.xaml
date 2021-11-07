@@ -5,21 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiffChecker"
         mc:Ignorable="d"
-        Title="Settings" WindowStyle="None" ResizeMode="NoResize" Height="160" Width="300">
+        Title="Settings" 
+        WindowStyle="None" 
+        ResizeMode="NoResize" 
+        Height="145" 
+        Width="300">
     <Border BorderBrush="Black" BorderThickness="1">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="5*"/>
+                <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
-            <TextBlock VerticalAlignment="Center" Margin="5,0,0,0" Text="Settings" Grid.Row="0"/>
-            <Image Cursor="Hand" MouseDown="closeBtn_MouseDown" x:Name="closeBtn" Height="22" Margin="260,0,0,0" Source="Icons/closeApp.png"/>
+            <StackPanel MouseLeftButtonDown="headerPanel_MouseLeftButtonDown"
+                        Orientation="Vertical"
+                        x:Name="headerPanel">
+                <TextBlock VerticalAlignment="Center" 
+                       Margin="5,5,0,0" 
+                       Text="Settings" 
+                       Grid.Row="0"/>
+            </StackPanel>
+            <Image Cursor="Hand" 
+                   MouseDown="closeBtn_MouseDown" 
+                   x:Name="closeBtn" 
+                   Height="22" 
+                   Margin="270,0,0,0" 
+                   Source="Icons/closeApp.png"/>
             <DockPanel Grid.Row="1">
-                <Border DockPanel.Dock="Top" BorderBrush="Black" BorderThickness="0.3"/>
+                <Border DockPanel.Dock="Top" 
+                        BorderBrush="Black" 
+                        BorderThickness="0.3"/>
                 <StackPanel>
-                    <ComboBox x:Name="fontBox" Margin="5,10,5,5" SelectedIndex="0" Style="{x:Null}" VerticalAlignment="Top" Height="30" ItemsSource="{Binding FontItems}"/>
-                    <ComboBox x:Name="sizeBox" Margin="5" SelectedIndex="0" Style="{x:Null}" VerticalAlignment="Top" Height="30" ItemsSource="{Binding FontSizes}"/>
-                    <Button Click="Button_Click" BorderBrush="Green" Background="Green" Margin="5,10,5,5" Content="Apply"/>
+                    <ComboBox x:Name="fontBox" 
+                              Margin="5,5,5,5" 
+                              SelectedIndex="0" 
+                              Style="{x:Null}" 
+                              VerticalAlignment="Top" 
+                              Height="30" 
+                              ItemsSource="{Binding FontItems}"/>
+                    <ComboBox x:Name="sizeBox" 
+                              Margin="5,0,5,5" 
+                              SelectedIndex="0" 
+                              Style="{x:Null}" 
+                              VerticalAlignment="Top" 
+                              Height="30" 
+                              ItemsSource="{Binding FontSizes}"/>
+                    <Button Click="Button_Click" 
+                            BorderBrush="Green" 
+                            Background="Green" 
+                            Margin="5,0,5,5" 
+                            Content="Apply"/>
                 </StackPanel>
             </DockPanel>
         </Grid>
